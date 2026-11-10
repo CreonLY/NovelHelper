@@ -1,0 +1,8 @@
+# pnpm 11 起，工作区级设置优先从这里读取（.npmrc 里的 node-linker 不再稳定生效）
+# Windows + 深目录下建符号链接会栈溢出，改用扁平布局（等价 npm 的 node_modules）
+nodeLinker: hoisted
+
+# 跨盘（C: 全局 store → D: 项目）时 pnpm 会把 store 放进项目目录；显式固定，便于 .gitignore
+storeDir: .pnpm-store
+
+onlyBuiltDependencies: []
